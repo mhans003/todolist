@@ -34,4 +34,14 @@ router.put("/api/todos/:id", function(request, response) {
     });
 }); 
 
+router.delete("/api/todos/:id", function(request, response) {
+    //const id = request.params.id; 
+    const condition = `id = ${request.params.id}`; 
+
+    todo.deleteOne(condition, function(result) {
+        if(result.changedRows === 0) return response.end(); 
+        response.status(200).end(); 
+    }); 
+}); 
+
 module.exports = router; 

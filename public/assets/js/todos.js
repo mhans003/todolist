@@ -35,4 +35,17 @@ $(function() {
             }
         ); 
     }); 
+
+    $(".delete-todo").on("click", function(event) {
+        const id = $(this).data("id"); 
+
+        $.ajax(`/api/todos/${id}`, {
+            type: "DELETE"
+        }).then(
+            function() {
+                console.log(`Deleted To-Do with ID #${id}.`); 
+                location.reload(); 
+            }
+        ); 
+    }); 
 })

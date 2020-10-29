@@ -35,6 +35,15 @@ const orm = {
 
             callBack(result); 
         }); 
+    },
+    deleteOne: function(table, condition, callBack) {
+        const queryString = `DELETE FROM ${table} WHERE ${condition}`; 
+
+        connection.query(queryString, function(error, result) {
+            if(error) throw error; 
+
+            callBack(result); 
+        }); 
     }
 }
 

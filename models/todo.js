@@ -15,6 +15,11 @@ const todo = {
         orm.updateOne("todos", columnValues, condition, function(result) {
             callBack(result); 
         }); 
+    },
+    deleteOne: function(condition, callBack) {
+        orm.deleteOne("todos", condition, function(result) {
+            callBack(result); 
+        }); 
     }
 }
 
