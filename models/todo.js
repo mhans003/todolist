@@ -10,6 +10,11 @@ const todo = {
         orm.insertOne("todos", columns, values, function(result) {
             callBack(result); 
         }); 
+    },
+    updateOne: function(columnValues, condition, callBack) {
+        orm.updateOne("todos", columnValues, condition, function(result) {
+            callBack(result); 
+        }); 
     }
 }
 

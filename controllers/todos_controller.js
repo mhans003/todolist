@@ -23,4 +23,15 @@ router.post("/api/todos", function(request, response) {
     })
 }); 
 
+router.put("/api/todos/:id", function(request, response) {
+    const condition = `id = ${request.params.id}`; 
+
+    console.log("condition",condition); 
+
+    todo.updateOne(`done = ${request.body.done}`, condition, function(result) {
+        if(result.changedRows === 0) return response.status(404).end(); 
+        response.status(200).end(); 
+    });
+}); 
+
 module.exports = router; 

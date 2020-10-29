@@ -16,4 +16,23 @@ $(function() {
             }
         ); 
     }); 
+
+    $(".toggle-done").on("click", function(event) {
+        const id = $(this).data("id"); 
+        const changeDone = $(this).data("done"); 
+
+        const doneStatus = {
+            done: changeDone
+        }; 
+
+        $.ajax(`/api/todos/${id}`, {
+            type: "PUT",
+            data: doneStatus
+        }).then(
+            function() {
+                console.log(`Changed done status to "${changeDone}".`); 
+                location.reload(); 
+            }
+        ); 
+    }); 
 })

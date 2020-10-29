@@ -26,8 +26,15 @@ const orm = {
             callBack(result); 
         }); 
     },
-    updateOne: function() {
+    updateOne: function(table, columnValue, condition, callBack) {
+        const queryString = `UPDATE ${table} SET ${columnValue} WHERE ${condition}`; 
+        console.log(queryString); 
 
+        connection.query(queryString, function(error, result) {
+            if(error) throw error; 
+
+            callBack(result); 
+        }); 
     }
 }
 
