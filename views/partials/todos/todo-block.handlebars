@@ -1,0 +1,13 @@
+<li>
+	{{todo}}
+
+    {{todo_item}}
+
+	<button class="toggle-done" data-id="{{id}}" data-done="{{done}}">
+		{{#if done}}Mark as Complete{{else}}Mark as Incomplete{{/if}}
+	</button>
+
+	<button class="delete-todo" data-id="{{id}}">
+		DELETE
+	</button>
+</li>
