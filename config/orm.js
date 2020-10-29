@@ -15,8 +15,16 @@ const orm = {
             callBack(result); 
         })
     },
-    insertOne: function() {
+    insertOne: function(table, columns, values, callBack) {
+        const queryString = `INSERT INTO ${table} SET ?`; 
+        connection.query(queryString, {
+            todo_item: values
+        }, 
+        function(error, result) {
+            if(error) throw error; 
 
+            callBack(result); 
+        }); 
     },
     updateOne: function() {
 

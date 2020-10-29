@@ -13,4 +13,14 @@ router.get("/", function(request, response) {
     }); 
 }); 
 
+router.post("/api/todos", function(request, response) {
+    todo.insertOne([
+        "todo_item"
+    ], [
+        request.body.todo_item
+    ], function(result) {
+        response.json({id: result.insertId}); 
+    })
+}); 
+
 module.exports = router; 
