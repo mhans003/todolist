@@ -3,7 +3,7 @@
 
 ## Deployed Application
 
-[Note Taker]()
+[To-Do List]()
 
 ![Screenshot of To-Do List](./public/assets/images/todo1.jpg)
 ![Screenshot of To-Do List](./public/assets/images/todo2.jpg)
