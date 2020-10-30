@@ -33,6 +33,22 @@ li {
     background-color: rgba(240,240,240,1.0); 
 }
 
+.btn-success {
+    background-color: rgba(92,184,92,0.65); 
+    border: none; 
+}
+
+.btn-danger {
+    background-color: rgba(217,83,79,0.65); 
+    border: none; 
+}
+
+.btn-warning {
+    background-color: rgba(240,173,78,0.65); 
+    border: none; 
+    color: #fff; 
+}
+
 @media screen and (max-width: 960px) {
     ul {
         margin-left: 0px; 
