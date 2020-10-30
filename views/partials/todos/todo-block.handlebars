@@ -1,13 +1,18 @@
-<li class="mt-2">
-	{{todo}}
+<li class="mt-4">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				{{todo_item}}
+			</div>
+			<div class="col">
+				<button class="btn {{#if done}} btn-success {{else}} btn-warning {{/if}} toggle-done" data-id="{{id}}" data-done="{{done}}">
+					{{#if done}}<i class="fas fa-check-square"></i>{{else}}<i class="fas fa-undo"></i>{{/if}}
+				</button>
 
-    {{todo_item}}
-
-	<button class="btn {{#if done}} btn-success {{else}} btn-warning {{/if}} toggle-done" data-id="{{id}}" data-done="{{done}}">
-		{{#if done}}<i class="fas fa-check-square"></i>{{else}}<i class="fas fa-undo"></i>{{/if}}
-	</button>
-
-	<button class="btn btn-danger delete-todo" data-id="{{id}}">
-		<i class="fas fa-trash"></i>
-	</button>
+				<button class="btn btn-danger delete-todo" data-id="{{id}}">
+					<i class="fas fa-trash"></i>
+				</button>
+			</div>
+		</div>
+	</div>	
 </li>

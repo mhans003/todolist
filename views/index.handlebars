@@ -1,14 +1,14 @@
 <nav class="background-image">
     <div class="header-background" id="navbar-heading-wrapper">
-        <h1 class="text-center">To-Do List</h1>
+        <h1 class="text-center display-3">To-Do List</h1>
     </div>
 </nav>
 
-<div class="container mt-5">
+<div class="container-fluid mt-5">
     <div class="row">
-        <div class="col-sm">
-            <h2 class="text-center">Incomplete To-Do</h2>
-            <ul class="text-right">
+        <div class="col-sm list-column">
+            <h2 class="text-center my-3">Incomplete</h2>
+            <ul class="mt-4">
                 {{#each todos}}
                     {{#unless done}}
                         {{> todos/todo-block done=true}}
@@ -16,9 +16,9 @@
                 {{/each}}
             </ul>
         </div>
-        <div class="col-sm">
-            <h2 class="text-center">Completed To-Do</h2>
-            <ul class="text-right">
+        <div class="col-sm list-column">
+            <h2 class="text-center my-3">Complete</h2>
+            <ul class="mt-4">
                 {{#each todos}}
                     {{#if done}}
                         {{> todos/todo-block done=false}}
@@ -29,17 +29,14 @@
     </div>
 </div>
 
-<div class="container text-center mt-3">
-    <h2>Add a To-Do</h2>
-
+<div class="container text-center my-5">
     <form class="create-todo">
-
-        <div class="form-group">
-            <input class="form-control form-control-lg" type="text" id="todo-text" name="todoText" placeholder="New To-Do">
+        <div class="input-group mb-3">
+            <input id="todo-text" type="text" name="todoText" class="form-control form-control-lg" placeholder="New To-Do" aria-label="New To-Do" aria-describedby="button-addon">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon"><i class="fas fa-plus mx-3"></i></button>
+            </div>
         </div>
-
-        <button class="btn btn-primary" type="submit">Add To-Do</button>
-
     </form>
 </div>
 
