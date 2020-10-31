@@ -1,6 +1,6 @@
 const express = require("express"); 
 const app = express(); 
-const PORT = process.env.PORT || 3000; 
+//const PORT = process.env.PORT || 3000; 
 
 app.use(express.static("public"));
 
@@ -16,6 +16,6 @@ var routes = require("./controllers/todos_controller.js");
 
 app.use(routes);
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log(`Server listening on port ${PORT}.`); 
 }); 
