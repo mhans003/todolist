@@ -5,7 +5,7 @@ const mysql = require("mysql");
 const connection = mysql.createConnection({
   //host: "localhost",
   host: "us-cdbr-east-02.cleardb.com",
-  port: 3306,
+  //port: 3306,
   //user: "root",
   user: "bc63f9baf3dc33",
   //password: "",
