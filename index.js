@@ -17,5 +17,5 @@ var routes = require("./controllers/todos_controller.js");
 app.use(routes);
 
 app.listen(process.env.PORT || 3000, function() {
-    console.log(`Server listening on port ${PORT}.`); 
+    console.log(`Server listening.`); 
 }); 
