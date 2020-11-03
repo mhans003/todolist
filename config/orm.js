@@ -7,9 +7,9 @@ const connection = require("./connection");
 
 //SQL Functions.
 const orm = {
-    selectAll: async function(table, callBack) {
+    selectAll: function(table, callBack) {
         const queryString = `SELECT * FROM ${table}`; 
-        connection.query(queryString, function(error, result) {
+        connection.query(queryString, async function(error, result) {
             if(error) throw error; 
 
             await callBack(result); 
