@@ -16,6 +16,7 @@ const mysql = require("mysql");
 });
 
 //Establish connection. 
+/*
 connection.connect(function(err) {
   if (err) {
     console.error(`Error Connecting: ${err.stack}`);
@@ -24,6 +25,7 @@ connection.connect(function(err) {
 
   console.log(`Connected as id ${connection.threadId}`);
 });
+*/
 
 // Export the connection. 
 module.exports = connection;
