@@ -7,12 +7,12 @@ const connection = require("./connection");
 
 //SQL Functions.
 const orm = {
-    selectAll: function(table, callBack) {
+    selectAll: async function(table, callBack) {
         const queryString = `SELECT * FROM ${table}`; 
         connection.query(queryString, function(error, result) {
             if(error) throw error; 
 
-            callBack(result); 
+            await callBack(result); 
         })
     },
     insertOne: function(table, columns, values, callBack) {
