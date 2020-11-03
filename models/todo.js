@@ -1,8 +1,8 @@
 const orm = require("../config/orm"); 
 
 const todo = {
-    selectAll: async function(callBack) {
-        orm.selectAll("todos", function(result) {
+    selectAll: function(callBack) {
+        orm.selectAll("todos", async function(result) {
             await callBack(result); 
         }); 
     },
