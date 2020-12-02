@@ -5,11 +5,11 @@
 				{{todo_item}}
 			</div>
 			<div class="col">
-				<button class="btn {{#if done}} btn-success {{else}} btn-warning {{/if}} toggle-done" data-id="{{id}}" data-done="{{done}}">
+				<button class="btn {{#if done}} btn-success {{else}} btn-warning {{/if}} toggle-done" data-id="{{id}}" data-done="{{done}}" aria-label="{{#if done}}Mark as Complete{{else}}Mark as Incomplete{{/if}}">
 					{{#if done}}<i class="fas fa-check-square"></i>{{else}}<i class="fas fa-undo"></i>{{/if}}
 				</button>
 
-				<button class="btn btn-danger delete-todo" data-id="{{id}}">
+				<button class="btn btn-danger delete-todo" data-id="{{id}}" aria-label="Delete item with text {{todo_item}}">
 					<i class="fas fa-trash"></i>
 				</button>
 			</div>
